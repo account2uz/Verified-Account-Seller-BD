@@ -1,0 +1,418 @@
+/* General Body and Layout Styles */
+body {
+    background-color: #0d1117;
+    color: #c9d1d9;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+/* Header Styles (Top Bar) */
+header {
+    background-color: #161b22;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    padding: 10px 15px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-sizing: border-box;
+    border-bottom: 1px solid #282b30;
+}
+
+.header-left, .header-right {
+    display: flex;
+    align-items: center;
+}
+.header-left {
+    justify-content: flex-start;
+}
+.header-right {
+    justify-content: flex-end;
+    gap: 15px;
+}
+
+.header-left span {
+    font-weight: 600;
+    font-size: 16px;
+    color: #ffffff;
+}
+.header-center {
+    text-align: center;
+}
+
+.glow-text {
+    font-size: 20px;
+    font-weight: 700;
+    color: #ffffff;
+    text-shadow: 0 0 5px #58a6ff, 0 0 10px #58a6ff, 0 0 15px #58a6ff;
+    animation: glow-animation 1.5s infinite alternate;
+    margin: 0;
+}
+
+@keyframes glow-animation {
+    0% { text-shadow: 0 0 5px #58a6ff, 0 0 10px #58a6ff; }
+    100% { text-shadow: 0 0 10px #58a6ff, 0 0 20px #58a6ff, 0 0 30px #58a6ff; }
+}
+
+.header-right .tab {
+    background-color: #23282f;
+    color: #8b949e;
+    padding: 4px 8px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+/* Hero Section (Green Notice) */
+.hero {
+    background-color: #1f3a2b;
+    color: #3fe089;
+    padding: 15px;
+    text-align: center;
+    font-size: 14px;
+    border-radius: 10px;
+    margin: 20px 0;
+    line-height: 1.5;
+    font-weight: 500;
+    box-shadow: 0 0 10px rgba(63, 224, 137, 0.2);
+}
+
+/* Account Listings Section */
+.account-listings {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+.account-card {
+    background-color: #161b22;
+    padding: 12px 15px;
+    border-radius: 8px;
+    border: 1px solid #30363d;
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+.account-card:hover {
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+    border-color: #444c56;
+}
+
+.account-info-main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.account-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.account-info .icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 5px;
+}
+
+.account-info .details {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.account-info .details h3 {
+    font-size: 15px;
+    margin: 0;
+    font-weight: 500;
+}
+
+.account-info .details p {
+    font-size: 13px;
+    margin: 0;
+    color: #8b949e;
+}
+
+.sell-btn {
+    background-color: #23282f;
+    color: #58a6ff;
+    padding: 8px 16px;
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 14px;
+    white-space: nowrap;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sell-btn:hover {
+    background-color: #2a3038;
+    box-shadow: 0 0 10px rgba(88, 166, 255, 0.3);
+}
+
+/* Form Styles */
+.sell-form-container {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out;
+}
+.sell-form-container.active {
+    max-height: 500px;
+    padding-top: 20px;
+}
+
+.sell-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.sell-form input {
+    background-color: #0d1117;
+    border: 1px solid #30363d;
+    color: #c9d1d9;
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.sell-form input:focus {
+    border-color: #58a6ff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(88, 166, 255, 0.5);
+}
+
+.sell-form input::placeholder {
+    color: #8b949e;
+}
+
+.payment-methods {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.payment-methods span {
+    font-size: 14px;
+    color: #8b949e;
+}
+
+.payment-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.payment-btn {
+    flex: 1;
+    background-color: #23282f;
+    color: #c9d1d9;
+    padding: 10px;
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.3s ease;
+}
+
+.payment-btn:hover {
+    background-color: #2a3038;
+}
+
+.payment-btn.selected {
+    background-color: #58a6ff;
+    color: #ffffff;
+    border-color: #58a6ff;
+    box-shadow: 0 0 10px rgba(88, 166, 255, 0.4);
+}
+
+.submit-btn {
+    background-color: #58a6ff;
+    color: #ffffff;
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #4a91e0;
+    box-shadow: 0 0 15px rgba(88, 166, 255, 0.5);
+}
+
+.submission-status {
+    text-align: center;
+    font-size: 14px;
+    color: #8b949e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Sellers Overview Section */
+.sellers-overview {
+    background-color: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 25px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.section-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #ffffff;
+    text-align: center;
+    margin: 0 0 15px;
+}
+
+.seller-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.seller-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+}
+
+.seller-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 500;
+}
+
+.seller-info img {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+}
+
+/* Social Media Icons */
+.seller-info .fab {
+    font-size: 20px;
+}
+.facebook-icon { color: #1877f2; }
+.instagram-icon {
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.telegram-icon { color: #2aabee; }
+.whatsapp-icon { color: #25d366; }
+
+.status {
+    color: #3fe089;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    text-shadow: 0 0 5px rgba(63, 224, 137, 0.5);
+}
+
+.status::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    background-color: #3fe089;
+    border-radius: 50%;
+    box-shadow: 0 0 8px rgba(63, 224, 137, 0.7);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.1); opacity: 0.8; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/* Contact Us Section */
+.contact-us {
+    background-color: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 25px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+.contact-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+}
+.contact-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 14px;
+}
+.contact-item a {
+    color: #58a6ff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+.contact-item a:hover {
+    color: #4a91e0;
+    text-decoration: underline;
+}
+
+/* Footer Styles */
+footer {
+    margin-top: 25px;
+    margin-bottom: 25px;
+    text-align: center;
+    font-size: 14px;
+    color: #8b949e;
+}
+
+/* Responsive adjustments for mobile devices */
+@media (max-width: 480px) {
+    .header-center {
+        display: none; /* Hide the center text on small screens to avoid crowding */
+    }
+    header {
+        grid-template-columns: 1fr 1fr;
+    }
+    .account-info-main {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .account-info {
+        width: 100%;
+    }
+
+    .sell-btn {
+        width: 100%;
+        text-align: center;
+    }
+}
