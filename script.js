@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
             event.preventDefault();
 
             // === IMPORTANT: REPLACE THIS URL WITH YOUR GOOGLE SHEET WEB APP URL ===
-            const googleSheetUrl = "https://script.google.com/macros/s/AKfycbwZr_Zg1pwaRTU262fhJtd6kId_nIMxoB9XqYINurMhGa5Dzq-LuTLUemckkGM7J0qRfQ/exec";
+            const googleSheetUrl = "https://script.google.com/macros/s/AKfycbxtwuIYfN9U4Be1B2QDMZhTOTKOTn-4m6N7NlF1Wa-j4vMBsPHnJX51QW1u3sMaTXDrgw/exec";
 
             // Find the submission status div within the current form
             const statusDiv = form.querySelector('.submission-status');
