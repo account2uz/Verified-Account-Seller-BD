@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
             };
 
             try {
-                const response = await fetch("https://api.sheetson.com/v2/sheets/Sheet1", {
+                const response = await fetch("https://api.sheetson.com/v2/sheets/AccountSubmissions", {
                     method: "POST",
                     headers: {
                         "Authorization": "Bearer sHD15hflFTPtodeh1o1zv9aFe6zznN8c_VFWDYDTdLlZb1-cNLe7qNKelHQ",
