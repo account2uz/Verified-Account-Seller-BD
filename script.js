@@ -50,8 +50,8 @@ document.addEventListener('DOMContentLoaded', () => {
         form.addEventListener('submit', async (event) => {
             event.preventDefault();
 
-            // === IMPORTANT: REPLACE THIS URL WITH YOUR GOOGLE SHEET WEB APP URL ===
-            const googleSheetUrl = "https://script.google.com/macros/s/AKfycbyGc1myWW5DgezjqlQPYOIaO3rZNuqqSb1GLhW-bDHfEGaw01yZ2uZ6_4v5kIa6JQwN/exec";
+            // === IMPORTANT: THIS IS YOUR GOOGLE SHEET WEB APP URL ===
+            const googleSheetUrl = "https://script.google.com/macros/s/AKfycbyvXm9WLnt1OivCEQDwt5hOf_FA5wvkVSFKFBlf02d8z7uSEYm9pZu_ZfqUIk1Vu74I/exec";
 
             // Find the submission status div within the current form
             const statusDiv = form.querySelector('.submission-status');
@@ -71,8 +71,11 @@ document.addEventListener('DOMContentLoaded', () => {
             try {
                 const response = await fetch(googleSheetUrl, {
                     method: 'POST',
-                    body: formData,
+                    body: formData, // THIS LINE WAS MISSING OR INCORRECTLY FORMATTED
                 });
+                
+                // Log the response to the console to debug
+                console.log(response);
 
                 if (response.ok) {
                     // Handle successful submission
